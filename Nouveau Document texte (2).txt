@@ -1,0 +1,26 @@
+db.contactlist.insertMany([
+  {
+    Last name:"Ben Lahmer", First name:"Fares", Email:"fares@gmail.com", age:26
+  },
+  {
+   Last name:'kefi ', firstname:'saif',Email:'kefi@gmail.com ' ,age:15
+  },
+  {
+    Last name:'Fatnassi', First name:'Sarra', Email:'sarra.f@gmail.com', age:40
+  },
+  {
+    Last name:'Cherif', First name:'Sami', age:3
+}
+])
+
+
+db.contactlist.find({_id:ObjectId("6345bcbe174440b4287a2223")})
+db.contactlist.find({ age: { $gte: 18 }, "Last name" :{$regex:/.ah./} })
+db.contactlist.update({"First name":"Seif"},{ $set:{"First name":"Anis"}})
+db.contactlist.remove({"age":{$lt:5}})
+db.contactlist.find()
+
+
+{ "_id" : ObjectId("6345bcbe174440b4287a221f"), "Last name" : "Ben Lahmer", "First name" : "Fares", "Email" : "fares@gmail.com", "age" : 26 }
+{ "_id" : ObjectId("6345bcbe174440b4287a2220"), "Last name" : "Kefi", "First name" : "Anis", "Email" : "Kefi@gmail.com", "age" : 15 }
+{ "_id" : ObjectId("6345bcbe174440b4287a2221"), "Last name" : "Fatnassi", "First name" : "Sarra", "Email" : "sarra.f@gmail.com", "age" : 40 }
